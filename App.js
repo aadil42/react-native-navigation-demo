@@ -5,18 +5,18 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 
 import { NavigationContainer } from "@react-navigation/native";
-import { createDrawerNavigator } from "@react-navigation/drawer";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
 
 import Welcome from "./screens/Welcome";
 import User from './screens/User';
-const Drawer = createDrawerNavigator();
+const BottomTab = createBottomTabNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
       <StatusBar style="light" />
-      <Drawer.Navigator
+      <BottomTab.Navigator
       screenOptions={{
         headerStyle: { backgroundColor: '#3c0a6b' },
         headerTintColor: 'white',
@@ -24,28 +24,26 @@ export default function App() {
         drawerActiveTintColor: '#3c0a6b',
       }}
       >
-        <Drawer.Screen 
+        <BottomTab.Screen 
         options={{
-          drawerLabel: "Welcome Screen",
-          drawerIcon: ({color, size})=> {
-            return <Ionicons name="home" color={color} size={size} />;
+          tabBarIcon: ({color, size})=> {
+            return <Ionicons name="home" color={color} size={35} />;
           }
         }}
-        name="welcome" 
+        name="Welcom" 
         component={Welcome} 
         />
 
-        <Drawer.Screen 
+        <BottomTab.Screen 
         options={{
-          drawerLabel: "User Screen",
-          drawerIcon: ({color, size})=> {
-            return <Ionicons name="person" color={color} size={size} />;
+          tabBarIcon: ({color, size})=> {
+            return <Ionicons name="person" color={color} size={35} />;
           }
         }}
-        name="user" 
+        name="User" 
         component={User} 
         />
-      </Drawer.Navigator>
+      </BottomTab.Navigator>
     </NavigationContainer>
   );
 }

@@ -2,7 +2,7 @@ import {View, Text, Pressable, StyleSheet} from "react-native";
 
 const Welcome = ({ navigation }) => {
     const pressHandler = () => {
-        navigation.toggleDrawer();
+        // navigation.toggleDrawer();
     }
 
     return (
