@@ -11,7 +11,7 @@ import { Ionicons } from "@expo/vector-icons";
 import Welcome from "./screens/Welcome";
 import User from './screens/User';
 const Drawer = createDrawerNavigator();
-
+// testing
 export default function App() {
   return (
     <NavigationContainer>
